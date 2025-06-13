@@ -1,0 +1,1 @@
+make character creator for DnD with simplified rules in a way that is theoretically extensible to other editions and other games (e.g. sf's game)
