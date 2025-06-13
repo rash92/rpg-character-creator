@@ -1,0 +1,23 @@
+{
+  "name": "rash-rpgcc",
+  "version": "1.0.0",
+  "description": "character creator for tabletop rpgs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rash92/rpg-character-creator.git"
+  },
+  "author": "rash92",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rash92/rpg-character-creator/issues"
+  },
+  "homepage": "https://github.com/rash92/rpg-character-creator#readme",
+  "devDependencies": {
+    "electron": "^36.4.0"
+  }
+}
