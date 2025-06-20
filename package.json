@@ -1,23 +1,39 @@
 {
-  "name": "rash-rpgcc",
+  "name": "my-new-app",
+  "productName": "my-new-app",
   "version": "1.0.0",
-  "description": "character creator for tabletop rpgs",
-  "main": "main.js",
+  "description": "My Electron application description",
+  "main": ".webpack/main",
   "scripts": {
-    "start": "electron .",
-    "test": "test"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rash92/rpg-character-creator.git"
+  "keywords": [],
+  "author": {
+    "name": "rrahman",
+    "email": "rashidur92@hotmail.com"
   },
-  "author": "rash92",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/rash92/rpg-character-creator/issues"
-  },
-  "homepage": "https://github.com/rash92/rpg-character-creator#readme",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^36.4.0"
+    "@electron-forge/cli": "^7.8.1",
+    "@electron-forge/maker-deb": "^7.8.1",
+    "@electron-forge/maker-rpm": "^7.8.1",
+    "@electron-forge/maker-squirrel": "^7.8.1",
+    "@electron-forge/maker-zip": "^7.8.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.1",
+    "@electron-forge/plugin-fuses": "^7.8.1",
+    "@electron-forge/plugin-webpack": "^7.8.1",
+    "@electron/fuses": "^1.8.0",
+    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "css-loader": "^6.11.0",
+    "electron": "36.5.0",
+    "node-loader": "^2.1.0",
+    "style-loader": "^3.3.4"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
   }
 }
