@@ -3,12 +3,14 @@ import { createRoot } from 'react-dom/client';
 
 const root = createRoot(document.body);
 
-function Test(){
-    return <div>Hello from functional component</div>
+function Test({text}){
+    text = text + "!"
+
+    return <div>{text}</div>
 }
 
 function App(){
-    return <Test/>
+    return <Test text="hello from functional component"></Test>
 }
 
 root.render(<App/>);
