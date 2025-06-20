@@ -10,3 +10,5 @@ business logic:
 UI:
     - pick which game's ruleset
     - design the UI
+
+do stupidest possible way to get list of files to the renderer. Whether in webpack or not. figure out list of files reading stuff.
