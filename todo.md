@@ -12,3 +12,9 @@ UI:
     - design the UI
 
 do stupidest possible way to get list of files to the renderer. Whether in webpack or not. figure out list of files reading stuff.
+
+how to deal with copying files etc.
+https://webpack.js.org/guides/asset-management/
+
+ipc renderer stuff:
+https://www.electronjs.org/docs/latest/api/ipc-renderer

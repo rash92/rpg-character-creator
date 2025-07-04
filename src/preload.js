@@ -3,15 +3,16 @@
 
 
 // below is example stuff we had before remaking showing how preload works.
-// const { contextBridge, ipcRenderer } = require('electron')
+const { contextBridge, ipcRenderer } = require('electron')
 
-// contextBridge.exposeInMainWorld('versions', {
-//   node: () => process.versions.node,
-//   chrome: () => process.versions.chrome,
-//   electron: () => process.versions.electron,
-//   ping: () => ipcRenderer.invoke('pang')
-//   // we can also expose variables, not just functions
-// })
+contextBridge.exposeInMainWorld('versions', {
+  node: () => process.versions.node,
+  chrome: () => process.versions.chrome,
+  electron: () => process.versions.electron,
+  ping: (arg1) => ipcRenderer.invoke('pang', arg1),
+  requestFiles: (path) => ipcRenderer.invoke('requestFiles', path)
+  // we can also expose variables, not just functions
+})
 
 
 // import { contextBridge } from 'electron';
@@ -38,18 +39,21 @@
 //   window.api = api;
 // }
 
-import readdir from "fs/promises"
-import { contextBridge} from "electron"
-// let { readdir } = require("fs/promises")
-// let { contextBridge } = require("electron")
 
-let directoryContents = async (path) => {
-  let results = await readdir(path, {withFileTypes: true})
-  return results.map(entry => ({
-    name: entry.name,
-    type: entry.isDirectory() ? "directory" : "file",
-  }))
+let directoryContents = (path) => {
+  console.log("in prejoad.js", path)
+  return "return from preload"
 }
+
+
+
+// let directoryContents = async (path) => {
+//   let results = await readdir(path, {withFileTypes: true})
+//   return results.map(entry => ({
+//     name: entry.name,
+//     type: entry.isDirectory() ? "directory" : "file",
+//   }))
+// }
 
 let currentDirectory = () => {
   return process.cwd()

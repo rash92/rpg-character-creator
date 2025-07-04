@@ -1,6 +1,9 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('node:path');
-const fs = require('fs');
+import { app, BrowserWindow, contextBridge, ipcMain } from 'electron';
+import path from 'node:path'
+import fs from 'fs';
+import testContents from './files_to_read/test.md'
+
+console.log(testContents)
 
 console.log(__dirname)
 let files = fs.readdirSync(__dirname);
@@ -51,6 +54,16 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
+
+ipcMain.handle('pang', async (event, arg1)=> {
+  console.log("in main.js, recieved pang, arg1 is: ", arg1)
+  return "ipc main handler returned"
+})
+
+ipcMain.handle('requestFiles', async (event, path)=>{
+  console.log("path requested is: ", path)
+  return files
+})
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
