@@ -18,3 +18,8 @@ https://webpack.js.org/guides/asset-management/
 
 ipc renderer stuff:
 https://www.electronjs.org/docs/latest/api/ipc-renderer
+
+
+figure out how to send information from dropdown menu selection back and forth. e.g. allow selecting game and then changing what is rendered based on that. At the moment have basic dropdown in app.jsx with html, can try to send that info. Other option, built in menu:
+
+https://www.electronjs.org/docs/latest/api/menu

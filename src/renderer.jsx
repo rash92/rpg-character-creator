@@ -40,9 +40,19 @@
 
 import './index.css';
 import './app.jsx';
+import React from 'react'
+import { createRoot } from 'react-dom/client';
+import App from './app.jsx';
 
 console.log('👋 This message is being logged by "renderer.js", included via webpack');
 window.versions.ping("arg from renderer.js")
 let filesReturned = window.versions.requestFiles("path requested")
 
+
+
 console.log(await filesReturned)
+
+// actual bit that renders react app
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);

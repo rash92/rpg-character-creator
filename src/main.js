@@ -1,9 +1,9 @@
-import { app, BrowserWindow, contextBridge, ipcMain } from 'electron';
+import { app, BrowserWindow, contextBridge, ipcMain, Menu } from 'electron';
 import path from 'node:path'
 import fs from 'fs';
-import testContents from './files_to_read/test.md'
+import testContents from './files_to_read/test.json'
 
-console.log(testContents)
+console.log(testContents.text)
 
 console.log(__dirname)
 let files = fs.readdirSync(__dirname);
